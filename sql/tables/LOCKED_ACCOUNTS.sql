@@ -1,0 +1,9 @@
+CREATE TABLE `LOCKED_ACCOUNTS` (
+  `id_lock` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `start_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `end_time` datetime NOT NULL,
+  PRIMARY KEY (`id_lock`),
+  KEY `id_user_idx` (`id_user`),
+  CONSTRAINT `id_user` FOREIGN KEY (`id_user`) REFERENCES `USER` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;

@@ -1,0 +1,9 @@
+CREATE TABLE `LOG_OF_LOGIN` (
+  `id_log` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `time_of_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `success` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id_log`),
+  KEY `id_user_idx` (`id_user`),
+  CONSTRAINT `id_users` FOREIGN KEY (`id_user`) REFERENCES `USER` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=311 DEFAULT CHARSET=latin1;
